@@ -1,0 +1,203 @@
+{% extends 'base.html' %}  
+    
+{% block head %}  
+<title>Data Penduduk Miskin</title>  
+{% endblock %}  
+{% block body %}
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <form class="contact100-form validate-form" action="/update/{{computers.id}}" method="POST">
+      <span class="contact100-form-title">Edit Data</span>
+
+      <div class="form-group">
+        <span class="label-input100">id bdt</span>
+          <input type="text" name="id_bdt" value="{{computers.id_bdt}}" class="form-control">
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="form-group">
+        <span class="label-input100">Nama Kepala Rumah Tangga</span>
+          <input type="text" name="nama_krt" value="{{computers.nama_krt}}" class="form-control">
+        <span class="focus-input100"></span>
+      </div>
+
+      <div class="wrap-input100 validate-input">  
+        <label for="sta_bangunan">Pilih Status Lahan</label>
+        <select class="form-control" name="sta_bangunan">
+          <option selected >{{computers.sta_bangunan}}</option>
+          <option value="1">1. Milik Sendiri</option>
+          <option value="2">2. Kontrak/Sewa</option>
+          <option value="3">3. Bebas Sewa</option>
+          <option value="4">4. Dinas</option>
+          <option value="5">5. Lainnya</option>
+        </select>  
+      </div>  
+
+      <div class="wrap-input100 validate-input">  
+        <label for="sta_lahan">Pilih Status Lahan</label>
+        <select class="form-control" name="sta_lahan">
+          <option selected >{{computers.sta_lahan}}</option>
+          <option value="1">1. Milik Sendiri</option>
+          <option value="2">2. Milik Orang Lain</option>
+          <option value="3">3. Tanah Negara</option>
+          <option value="4">4. Lainnya</option>
+        </select>   
+      </div>
+
+      <div class="wrap-input100 validate-input">  
+        <span class="label-input100">luas_lantai</span>  
+          <input type="text" name="luas_lantai" value="{{computers.luas_lantai}}" class="form-control">  
+        <span class="focus-input100"></span>  
+      </div>
+
+      <div class="wrap-input100 validate-input">  
+        <label for="lantai">Pilih Lantai</label>
+        <select class="form-control" name="lantai" >
+          <option selected >{{computers.lantai}}</option>
+          <option value="1">1. Marmer/Granit</option>
+          <option value="2">2. Keramik</option>
+          <option value="3">3. Parket</option>
+          <option value="4">4. Ubin</option>
+          <option value="5">5. Kayu/kualitas tinggi</option>
+          <option value="6">6. Semen</option>
+          <option value="7">7. Bambu</option>
+          <option value="8">8. Kayu/Kualitas Rendah</option>
+          <option value="9">9. Tanah</option>
+          <option value="10">10. Lainnya</option>
+        </select>  
+      </div>
+
+      <div class="wrap-input100 validate-input">  
+        <label for="dinding">Pilih Dinding</label>
+        <select class="form-control" name="dinding" >
+          <option selected >{{computers.dinding}}</option>
+          <option value="1">1. Tembok</option>
+          <option value="2">2. Plesteran Anyaman Bambu/Kawat</option>
+          <option value="3">3. Kayu</option>
+          <option value="4">4. Anyaman Bambu</option>
+          <option value="5">5. Batang Kayu</option>
+          <option value="6">6. Bambu</option>
+          <option value="7">7. Lainnya</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">  
+        <label for="kondisi_dinding">Pilih Kondisi Dinding</label>
+        <select class="form-control" id="kondisi_dinding" name="kondisi_dinding">
+          <option selected >{{computers.kondisi_dinding}}</option>
+          <option value="1">1. Bagus/Kualitas Tinggi</option>
+          <option value="2">2. Jelek/Kualitas Jelek</option>
+        </select>  
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="atap">Pilih Atap</label>
+        <select class="form-control" name="atap">
+          <option selected >{{computers.atap}}</option>
+          <option value="1">1. Beton</option>
+          <option value="2">2. Genteng Keramik</option>
+          <option value="3">3. Genteng Metal</option>
+          <option value="4">4. Genteng Tanah Liat</option>
+          <option value="5">5. Asbes</option>
+          <option value="6">6. Seng</option>
+          <option value="7">7. Sirap</option>
+          <option value="8">8. Bambu</option>
+          <option value="9">9. Jerami/ijuk</option>
+          <option value="10">10. Lainnya</option>
+        </select>   
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="kondisi_atap">Pilih Kondisi Atap</label>
+        <select class="form-control" name="kondisi_atap">
+          <option selected >{{computers.atap}}</option>
+          <option value="1">1. Bagus/Kualitas Tinggi</option>
+          <option value="2">2. Jelek/Kualitas Jelek</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="sumber_airminum">Pilih Sumber Air Minum</label>
+        <select class="form-control" name="sumber_airminum">
+          <option selected >{{computers.sumber_airminum}}</option>
+          <option value="1">1. Air Kemasan Bermerek</option>
+          <option value="2">2. Air Isi Ulang</option>
+          <option value="3">3. Leding Meteran</option>
+          <option value="4">4. Leding Eceran</option>
+          <option value="5">5. Sumur bor/pompa</option>
+          <option value="6">6. Sumur Terlindungi</option>
+          <option value="7">7. Sumur Tak Terlindungi</option>
+          <option value="8">8. Mata Air Terlindungi</option>
+          <option value="9">9. Mata Air Tak Terlindung</option>
+          <option value="10">10. Air Sung/danau/waduk</option>
+          <option value="11">11. Air Hujan</option>
+          <option value="12">12. Lainnya</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="cara_peroleh_airminum">Pilih Cara Peroleh Air Minum</label>
+        <select class="form-control" name="cara_peroleh_airminum">
+          <option selected >{{computers.cara_peroleh_airminum}}</option>
+          <option value="1">1. Membeli Eceran</option>
+          <option value="2">2. Langganan</option>
+          <option value="3">3. Tidak Membeli</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="ibu_hamil">Pilih Ibu Hamil</label>
+        <select class="form-control" name="ibu_hamil">
+          <option selected >{{computers.ibu_hamil}}</option>
+          <option value="1">1. ya</option>
+          <option value="2">2. tidak</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="anak_sekolah">Pilih Anak Sekolah</label>
+        <select class="form-control" name="anak_sekolah">
+          <option selected >{{computers.anak_sekolah}}</option>
+          <option value="1">1. ya</option>
+          <option value="2">2. tidak</option>
+        </select> 
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="balita">Pilih Balita</label>
+        <select class="form-control" name="balita">
+          <option selected >{{computers.balita}}</option>
+          <option value="1">1. ya</option>
+          <option value="2">2. tidak</option>
+        </select>  
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="lansia">Pilih Lansia</label>
+        <select class="form-control" name="lansia">
+          <option selected >{{computers.lansia}}</option>
+          <option value="1">1. ya</option>
+          <option value="2">2. tidak</option>
+        </select>  
+      </div>
+
+      <div class="wrap-input100 validate-input">
+        <label for="penerima_pkh">Pilih Penerima PKH</label>
+        <select class="form-control" name="penerima_pkh">
+          <option selected >{{computers.penerima_pkh}}</option>
+          <option value="0">0. tidak</option>
+          <option value="1">1. ya</option>
+        </select>
+      </div>
+
+      <div class="container-contact100-form-btn">  
+      <div class="wrap-contact100-form-btn">  
+      <div class="contact100-form-bgbtn"></div>  
+        <button type="submit" class="contact100-form-btn">Edit</button>  
+      
+      </div>  
+      </div> 
+    </form>
+  </div>
+</div>
+{% endblock %}  

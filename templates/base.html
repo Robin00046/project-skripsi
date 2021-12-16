@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/icons/favicon.ico') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vendor/bootstrap/css/bootstrap.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css/main.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css/util.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vendor/bootstrap/css/bootstrap.css') }}" /> 
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Klasifikasi</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav" style=" width: 100%; display: flex; " >
+          <a class="nav-item nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="{{ url_for('data') }}">Data</a>
+          <a class="nav-item nav-link" href="{{ url_for('proses') }}">Klasifikasi</a>
+          <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+          <a style="right: 2%;position: absolute;" class="nav-item nav-link " href="{{ url_for('logout') }}">Log Out</a>
+      </div>
+  </div>
+</nav>
+{% block body %}
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="integrety-key" crossorigin="anonymous"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#example').DataTable();
+  } );
+</script>
+</body>
+</html>

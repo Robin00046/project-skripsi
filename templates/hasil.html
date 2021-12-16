@@ -1,0 +1,43 @@
+  {% extends 'base.html' %}  
+    
+  {% block head %}  
+  <title>Hasil</title>  
+ {% endblock %}  
+ <style>
+   bg
+ {
+  background: #a64bf4;
+ }</style>
+  
+
+  {% block body %}
+  <div class="container-contact100">  
+    <div class="wrap-contact100">  
+      <form class="contact100-form validate-form" action="/proses" method="GET">
+        {% if finalData == 1 %}  
+        <span class="contact100-form-title">  
+          {{nama}}
+        </span>
+        <span class="contact100-form-title">  
+        Layak Menerima Bantuan PKH
+        </span>
+        {% else %}
+        <span class="contact100-form-title">  
+          {{nama}}
+        </span>
+        <span class="contact100-form-title">  
+        Tidak layak Menerima Bantuan PKH
+        </span>
+        {% endif %}
+        <div class="container-contact100-form-btn">  
+        <div class="wrap-contact100-form-btn">  
+        <div class="contact100-form-bgbtn"></div>  
+        <button class="contact100-form-btn">  
+          Selesai  
+        </button>
+        </div>  
+        </div>   
+      </form>  
+    </div>  
+  </div>  
+    {% endblock %}  

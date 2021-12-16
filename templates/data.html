@@ -1,0 +1,70 @@
+{% extends 'base.html' %}  
+    
+{% block head %}  
+<title>Data Penduduk Miskin</title>
+
+
+{% endblock %}
+ 
+{% block body %} 
+<h1 align="center">Data Penduduk Miskin</h1>
+<div class="container-fluid" >
+   <a href="/tambah" ><button type="button" class="btn btn-primary">Tambah Data</button></a>
+    <div class="table-responsive">
+       <table id="example" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+              <tr>
+                <th>No</th>
+                <th>id_bdt</th>
+                <th>nama_krt</th>
+                <th>status bangunan</th>
+                <th>status lahan</th>
+                <th>luas lantai</th>
+                <th>lantai</th>
+                <th>dinding</th>
+                <th>kondisi dinding</th>
+                <th>atap</th>
+                <th>kondisi atap</th>
+                <th>sumber air minum</th>
+                <th>cara memperoleh air  minum</th>
+                <th>ibu hamil</th>
+                <th>anak sekolah</th>
+                <th>balita</th>
+                <th>lansia</th>
+                <th>penerima pkh</th>
+                <th>Aksi</th>
+              </tr>
+          </thead>
+          <tbody>
+        {% for data in computers %}
+             <tr>
+                <td>{{ data.id }}</td>
+                <td>{{ data.id_bdt }}</td>
+                <td>{{ data.nama_krt }}</td>
+                <td>{{ data.sta_bangunan }}</td>
+                <td>{{ data.sta_lahan }}</td>
+                <td>{{ data.luas_lantai }}</td>
+                <td>{{ data.lantai }}</td>
+                <td>{{ data.dinding }}</td>
+                <td>{{ data.kondisi_dinding }}</td>
+                <td>{{ data.atap }}</td>
+                <td>{{ data.kondisi_atap }}</td>
+                <td>{{ data.sumber_airminum }}</td>
+                <td>{{ data.cara_peroleh_airminum }}</td>
+                <td>{{ data.ibu_hamil }}</td>
+                <td>{{ data.anak_sekolah }}</td>
+                <td>{{ data.balita }}</td>
+                <td>{{ data.lansia }}</td>
+                <td>{{ data.penerima_pkh }}</td>
+                <td>
+                <a href="/edit/{{data.id}}" class="btn btn-warning btn-xs" >Edit</a>
+                <a href="/delete/{{data.id}}" class="btn btn-danger btn-xs" onclick="return confirm('Yakin ingin hapus?')">Hapus</a>
+                </td>
+             </tr>
+        {% endfor %}
+
+          </tbody>
+       </table>
+    </div>
+ </div>
+{% endblock %}  

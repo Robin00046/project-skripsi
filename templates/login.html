@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Login</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/images/icons/favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/vendor/bootstrap/css/bootstrap.min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/css/main.css') }}" />
+</head>
+<body class="bg-info">
+  <div class="login">
+    <div class="container-contact100">
+        <br/>
+            <div class="col-md-4 offset-md-4">
+                <div class="card" style="height: 67vh;">
+                    <div class="card-body">
+                        <h3 class="font-weight-normal text-center text-dark"><b>Sistem Klasifikasi</b></h3>
+                        <h3 class="font-weight-normal text-center text-dark"><b>Penerima PKH</b></h3>
+                        <h4 class="font-weight-bold text-center mb-3 mt-3">Login</h4>
+                        <form class="contact100-form validate-form" method="post" style="display: flex; flex-direction: column;margin-top: 30px;">
+                            <div class="form-group" style="display: flex;flex-direction: column;font-size: 25px;">
+                                <label for="username">Username</label>
+                                <input class="input" type="text" name="username" placeholder="Username" style="border: 1px solid rgba(0,0,0,0.2);padding: 10px; border-radius: 10px;">
+                            </div>
+                            <div class="form-group" style="display: flex;flex-direction: column;font-size: 25px;">
+                                <label for="password">Password</label>
+                                <input class="input" type="password" name="password" placeholder="Password" style="border: 1px solid rgba(0,0,0,0.2);padding: 10px; border-radius: 10px;">
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="border: 1px solid rgba(0,0,0,0.2);padding: 10px;font-size: 25px;">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</body>
+</html>
